@@ -9,7 +9,7 @@ install:
   networks:
     harvester-mgmt:       # (Mandatory) The management bond name.
       interfaces:
-      - name: ens5
+      - name: ens0
       default_route: true
       method: dhcp
       bond_options:
@@ -17,7 +17,7 @@ install:
         miimon: 100
     harvester-vlan:       # (Optional) The VLAN network bond name. If VLAN NIC names vary from
       interfaces:         # host to host, consider creating a bonding device. Users can then select
-      - name: ens6        # `harvester-vlan` as the VLAN network NIC in the Harvester GUI.
+      - name: ens1        # `harvester-vlan` as the VLAN network NIC in the Harvester GUI.
       method: none
       bond_options:
         mode: balance-tlb
