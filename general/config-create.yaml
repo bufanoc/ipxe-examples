@@ -2,7 +2,7 @@ token: token             # Replace with a desired token
 os:
   hostname: harvester01        # Set a hostname. This can be omitted if DHCP server offers hostnames.
   ssh_authorized_keys:
-  - ssh-rsa ...          # Replace with your public key
+            # Replace with your public key
   password: Passw0rd!     # Replace with a your password
 install:
   mode: create
@@ -13,15 +13,15 @@ install:
       default_route: true
       method: dhcp
       bond_options:
-        mode: balance-tlb
-        miimon: 100
+        mode: 
+        miimon: 
     harvester-vlan:       # (Optional) The VLAN network bond name. If VLAN NIC names vary from
       interfaces:         # host to host, consider creating a bonding device. Users can then select
       - name: ens1        # `harvester-vlan` as the VLAN network NIC in the Harvester GUI.
       method: none
       bond_options:
-        mode: balance-tlb
-        miimon: 100
+        mode: 
+        miimon:
   device: /dev/sda       # The target disk to install
   iso_url: https://releases.rancher.com/harvester/master/harvester-master-amd64.iso
 #  tty: ttyS1,115200n8   # For machines without a VGA console
